@@ -147,3 +147,4 @@ if(isNaN(age)){
 } else{               //else는 선택사항
     console.log("You can drink");
 }
+// =================================#2 end!
