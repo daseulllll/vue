@@ -68,7 +68,7 @@ public class CommentService {
 		Comment target = commentRepository.findById(id)
 			.orElseThrow(()-> new IllegalArgumentException("댓글 수정 실패! 대상 댓글이 없습니다"));
 		
-		//댓글 수정
+		//댓글 수정 
 		target.patch(dto);
 		
 		//DB로 갱신

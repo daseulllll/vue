@@ -20,7 +20,7 @@ import com.example.firstproject.service.CommentService;
 @RestController
 public class CommentApiController {
 
-	@Autowired
+	@Autowired //RestController가 Service와 협업할 수 있도록
 	private CommentService commentService;
 	
 	//댓글 목록 조회
