@@ -1,30 +1,36 @@
 <template>
-	<div>
-		<Header />
-		<News />
-		<BookCard />
-		<Footer />
-	</div>
+  <div>
+    <div class="head"><Header /></div>
+    <div id="app">
+      <router-view />
+    </div>
+    <div class="foot"><Footer /></div>
+  </div>
 </template>
 
 <script>
-import Header from './Header.vue';
-import News from './components/card/News.vue';
-import BookCard from './components/card/BookCard.vue';
-import Footer from './Footer.vue';
+import Header from "../src/components/GNBcompo/Header.vue";
+import Footer from "../src/components/GNBcompo/Footer.vue";
 
 export default {
-	name: 'App',
-
-	components: {
-		Header,
-		BookCard,
-		Footer,
-		News,
-	},
-
-	data: () => ({
-		//
-	}),
+  components: {
+    Header,
+    Footer,
+  },
 };
 </script>
+
+<style lang="scss">
+.head {
+  text-align: center;
+  width: 100%;
+//   width: 2000px;
+}
+.foot {
+  // background-color: red;
+  // position: absolute;
+  bottom: 0px;
+  text-align: center;
+  // padding-bottom: 1219px;
+}
+</style>
