@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss">
 .swiper {
-	// padding: 50px;
+	// padding-top: ;
 	width: 100vw;
 	height: 100%;
 	float: right;

@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<swiper class="swiper" :options="swiperOption">
-			<swiperSlide>
+		<!-- <swiper class="swiper" :options="swiperOption"> -->
+			<!-- <swiperSlide> -->
 				<div>
 					<span>뉴스 스탠드</span>
 				</div>
@@ -9,15 +9,18 @@
 					<table>
 						<tr v-for="(list, idx) in realNews" :key="idx">
 							<td v-for="li in list" :key="li.id">
-								<a :href="li.link"><img :src="li.label" /></a>
+								<img :src="li.label" @click="linkButton()" />
+								<a :href="li.link" target="_blank">
+									<b-button size="sm" v-b-popover.hover="'go to news'" :class="{invisible : !showButton}" v-if="isClick">News Link</b-button>
+								</a>
 							</td>
 						</tr>
-					</table></div
-			></swiperSlide>
-			<div class="swiper-pagination" slot="pagination"></div>
+					</table></div>
+			<!-- </swiperSlide> -->
+			<!-- <div class="swiper-pagination" slot="pagination"></div>
 			<div class="swiper-button-prev" slot="button-prev"></div>
-			<div class="swiper-button-next" slot="button-next"></div>
-		</swiper>
+			<div class="swiper-button-next" slot="button-next"></div> 
+		</swiper>-->
 	</div>
 </template>
 
@@ -46,9 +49,16 @@ tabledb.map((item, index) => {
 });
 
 export default {
-	components: { swiper, swiperSlide },
+	methods:{
+		linkButton(){
+			this.isClick = !this.isClick;
+		}
+	},
+	// components: { swiper, swiperSlide },
 	data() {
 		return {
+			showButton:true,
+			isClick:false,
 			tabledb,
 			realNews,
 			swiper,
@@ -72,7 +82,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.invisible {
+  visibility: hidden;
+}
 
 .swiper {
 	// padding: 50px;
@@ -87,8 +99,8 @@ export default {
 	// float: left;
 	// padding: 100px;
 	display: flex;
-	// width: 100%;
-	width: 100px;
+	width: 100vw;
+	// width: 100px;
 	// height: 325px;
 	line-height: 100px;
     align-items: center;

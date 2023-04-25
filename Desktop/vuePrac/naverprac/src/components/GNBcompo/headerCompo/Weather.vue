@@ -7,7 +7,7 @@
 
 <script>
 const API_key = process.env.VUE_APP_API_KEY;
-// const API_key = '';
+// const API_key = "";
 // console.log(':::::::::::::::::::::', API_key);
 const base_url = 'https://api.openweathermap.org/data/2.5/';
 

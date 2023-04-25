@@ -118,6 +118,7 @@ export default {
 		// position: absolute;
 		text-align: center;
 		// top: 70px;
+		padding-left: 30px;
 		input {
 			width: 550px;
 			height: 50px;

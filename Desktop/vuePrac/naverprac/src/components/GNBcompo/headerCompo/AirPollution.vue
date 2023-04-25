@@ -27,8 +27,7 @@ const API_key = process.env.VUE_APP_API_KEY;
 const base_url = 'https://api.openweathermap.org/data/2.5/';
 
 export default {
-	components: {},
-	data() {
+	data(){
 		return {
 			index: '',
 		};
